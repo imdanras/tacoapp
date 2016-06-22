@@ -55,6 +55,11 @@ describe('GET /tacos/:id', function() {
 describe('PUT /tacos/:id', function() {
   it('return a 200 and send a success message', function(done) {
     request(app).put('/tacos/1')
+    .type('form')
+    .send({
+      name: 'Gordita Crunch',
+      amount: 2000
+    })
     .end(function(err, response) {
       expect(response.statusCode).to.equal(200);
       expect(response.body).to.have.property('msg');
