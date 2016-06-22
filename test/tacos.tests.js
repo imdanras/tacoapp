@@ -76,6 +76,7 @@ describe('DELETE tacos/:id', function() {
   });
 });
 
+//DELETE a taco that does not exist
 describe('DELETE /tacos/:id', function() {
   it('should return an error message and 404', function(done) {
     request(app).delete('/tacos/1')
